@@ -10,6 +10,12 @@ export class ShopContentComponent implements OnInit {
 
     products: Product[] = [];
 
+    selectedColor: checkBoxColors[] = [
+        {color: 'black', id: 1},
+        {color: 'red', id: 2},   
+        {color: 'silver', id: 3}
+    ] 
+
     constructor() { }
 
     ngOnInit(): void {
@@ -26,12 +32,6 @@ export class ShopContentComponent implements OnInit {
             {url:'../../../assets/Images/jonathan-borba-reiwBhNJQS0-unsplash.jpg', name: 'BRIONI',  description: 'Brioni rectangular oversize havana acetate sunglasses', model: 'Model Ref: 54BRI', color: 'black', price: 320.00 },
         ]; 
     }
-
-    selectedColor: checkBoxColors[] = [
-        {color: 'black', id: 1, checked: false},
-        {color: 'red', id: 2, checked: false},   
-        {color: 'silver', id: 3, checked: false}
-    ]   
 
     filteredProduct: any = [];
 
@@ -56,5 +56,4 @@ interface Product {
 interface checkBoxColors {
     color: string,
     id: number,
-    checked: boolean
 }

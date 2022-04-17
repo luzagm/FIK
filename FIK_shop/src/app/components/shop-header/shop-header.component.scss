@@ -4,6 +4,10 @@
     justify-content: space-between;
     width: 100%;
 
+    &-menu {
+        width: 170px;
+    }
+
     &-logo {
         height: 100px;
     }
@@ -11,6 +15,7 @@
     &-nav {
         display: flex;
         align-items: center;
+        width: 170px;
         .search, .login {
             text-transform: uppercase;
             margin: 0 24px 0 0;
