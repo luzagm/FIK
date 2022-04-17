@@ -9,12 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class ShopContentComponent implements OnInit {
 
     products: Product[] = [];
-    filteredColor: FilterColor [] = [];
 
     constructor() { }
 
     ngOnInit(): void {
-
     this.products = [
             {url:'../../../assets/Images/alex-iby-XhMSz5I1kn8-unsplash.jpg', name: 'BRIONI',  description: 'Brioni vintage inspired black sunglasses', model: 'Model Ref: 60BRI', color: 'silver', price: 320.00 },
             {url:'../../../assets/Images/woman-gc313e4feb_1920.jpg', name: 'BRIONI',  description: 'Brioni square glasses made with acetate and titanium', model: 'Model Ref: 48BRI', color: 'black', price: 490.00 },
@@ -26,17 +24,27 @@ export class ShopContentComponent implements OnInit {
             {url:'../../../assets/Images/model-gcecd4b72f_1920.jpg', name: 'BRIONI',  description: 'Brioni square vintage black acetate sunglasses', model: 'Model Ref: 56BRI', color: 'black',  price: 350.00 },
             {url:'../../../assets/Images/prince-akachi-4Yv84VgQkRM-unsplash.jpg', name: 'BRIONI',  description: 'Brioni titanium silver grey sunglasses', model: 'Model Ref: 58BRI', color: 'black', price: 460.00 },
             {url:'../../../assets/Images/jonathan-borba-reiwBhNJQS0-unsplash.jpg', name: 'BRIONI',  description: 'Brioni rectangular oversize havana acetate sunglasses', model: 'Model Ref: 54BRI', color: 'black', price: 320.00 },
-        ];
+        ]; 
+    }
 
-        this.filteredColor = [
-            {color: 'black', id: 1},
-            {color: 'red', id: 2},   
-            {color: 'silver', id: 3}
-        ]
-  }
+    selectedColor: checkBoxColors[] = [
+        {color: 'black', id: 1, checked: false},
+        {color: 'red', id: 2, checked: false},   
+        {color: 'silver', id: 3, checked: false}
+    ]   
+
+    filteredProduct: any = [];
+
+    ChangeFilterProducts() {
+        this.selectedColor.filter((checkbox) => {
+            if (checkbox.id === 1) {
+                this.filteredProduct.push(this.products.filter((product) => product.color === 'black'))
+            }
+        })
+        console.log(this.filteredProduct);
+    }
 
 }
-
 interface Product {
     url: string,
     name: string,
@@ -45,8 +53,8 @@ interface Product {
     color: string,
     price: number,
 };
-
-interface FilterColor {
+interface checkBoxColors {
     color: string,
     id: number,
-};
+    checked: boolean
+}

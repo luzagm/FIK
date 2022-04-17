@@ -3,7 +3,7 @@
         <p class="grid_header-name">glasses</p>
         <div class="grid_header-filter">
             <p class="grid_filter-title">color:</p>   
-            <div class="grid_filter-color" *ngFor="let color of filteredColor"><input type="checkbox"> {{color.color}}</div>
+            <div class="grid_filter-color" *ngFor= "let color of selectedColor"><input type="checkbox" id={{color.id}} (change)="ChangeFilterProducts()">{{color.color}}</div>
         </div>
     </div>
     <div class="row grid_body">
