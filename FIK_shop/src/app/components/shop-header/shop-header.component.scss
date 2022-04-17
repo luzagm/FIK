@@ -1,0 +1,22 @@
+.shop_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    &-logo {
+        height: 100px;
+    }
+
+    &-nav {
+        display: flex;
+        align-items: center;
+        .search, .login {
+            text-transform: uppercase;
+            margin-right: 24px;
+            &:hover {
+                text-decoration: underline;
+            }
+        }    
+    }
+}
