@@ -58,15 +58,4 @@ export class ShopContentComponent implements OnInit{
         }
         this.changeDetector.markForCheck();
     }
-
-    //filteredProduct: any = [];
-
-    //ChangeFilterProducts() {
-    //    this.selectedColor.filter((checkbox) => {
-    //        if (checkbox.id === 1) {
-    //            this.filteredProduct.push(this.products.filter((product) => product.color === 'black'))
-    //        }
-    //    })
-    //    console.log(this.filteredProduct);
-    //}
 }
