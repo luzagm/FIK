@@ -3,16 +3,18 @@
         <p class="grid_header-name">glasses</p>
         <div class="grid_header-filter">
             <p class="grid_filter-title">color:</p>   
-            <div class="grid_filter-color" *ngFor= "let color of selectedColor"><input type="checkbox" id={{color.id}} (change)="ChangeFilterProducts()">{{color.color}}</div>
+            <div class="grid_filter-color" *ngFor= "let color of selectedColor"><input type="checkbox" id={{color.id}} (click)=checkboxDisplay($event)>{{color.color}}</div>
         </div>
     </div>
     <div class="row grid_body">
-        <div class="col-3 grid_content" *ngFor="let product of products">
-            <div class="grid_content-image"><img src={{product.url}}></div>
-            <p class="grid_content-name">{{product.name}}</p>
-            <p class="grid_content-desc">{{product.description}}</p>
-            <p class="grid_content-model">{{product.model}}</p>
-            <p class="grid_content-price">{{product.price}} EUR</p>
+        <div class="col-3 grid_content" *ngFor="let product of productsFiltered">
+            <div class="grid_content-wrap {{product.class}}">
+                <div class="grid_content-image"><img src={{product.url}}></div>
+                <p class="grid_content-name">{{product.name}}</p>
+                <p class="grid_content-desc">{{product.description}}</p>
+                <p class="grid_content-model">{{product.model}}</p>
+                <p class="grid_content-price">{{product.price}} EUR</p>
+            </div>
         </div>    
     </div>
 </div>

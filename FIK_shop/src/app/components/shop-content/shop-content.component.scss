@@ -29,6 +29,12 @@
 .grid_body {
     .grid_content {
         font-size: 14px;
+        &-wrap {
+            height: 100%; 
+        }
+        .checkbox-active {
+                display: none;
+            }
         &-image {
             height: 70%;
             img {
@@ -54,3 +60,4 @@
         }
     }
 }
+
