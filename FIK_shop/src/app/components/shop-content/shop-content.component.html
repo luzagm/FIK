@@ -8,7 +8,7 @@
     </div>
     <div class="row grid_body">
         <div class="col-3 grid_content" *ngFor="let product of productsFiltered">
-            <div class="grid_content-wrap {{product.class}}">
+            <div class="grid_content-wrap">
                 <div class="grid_content-image"><img src={{product.url}}></div>
                 <p class="grid_content-name">{{product.name}}</p>
                 <p class="grid_content-desc">{{product.description}}</p>

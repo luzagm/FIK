@@ -4,6 +4,5 @@ export interface Product {
     description: string,
     model: string,
     color: string,
-    class: string,
     price: number,
 };
