@@ -1,2 +1,2 @@
 # FIK
-HTML, Angular 12, SCSS, Primeng
+HTML, Angular 12, SCSS
